@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-react",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A react version of popular UI framework Twitter Bootstrap",
   "main": "index.js",
   "scripts": {
