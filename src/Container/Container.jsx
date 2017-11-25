@@ -1,5 +1,5 @@
 import React from "react";
-import { getElementType } from "../utils/getElementType";
+import getElementType from "../utils/getElementType";
 
 const Container = ({ fluid, style, children, className, ...rest }) => {
   const Element = getElementType(Container, rest);

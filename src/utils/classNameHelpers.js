@@ -1,4 +1,4 @@
-export const buildClassName = (element, options, additionalClasses) => {
+const buildClassName = (element, options, additionalClasses) => {
   const selectedOptions = Object.keys(options).filter(
     option => options[option] === true
   );
@@ -7,3 +7,5 @@ export const buildClassName = (element, options, additionalClasses) => {
     .join(" ");
   return `${element} ${classNames} ${additionalClasses}`;
 };
+
+export default buildClassName;

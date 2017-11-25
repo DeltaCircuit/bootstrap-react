@@ -1,6 +1,6 @@
 import React from "react";
-import { buildClassName } from "../utils/classNameHelpers";
-import { getElementType } from "../utils/getElementType";
+import buildClassName from "../utils/classNameHelpers";
+import getElementType from "../utils/getElementType";
 
 const Badge = ({ children, className, ...rest }) => {
   const Element = getElementType(Badge, rest);
