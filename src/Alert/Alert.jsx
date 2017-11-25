@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { getElementType } from "../utils/getElementType";
-import { buildClassName } from "../utils/classNameHelpers";
+import getElementType from "../utils/getElementType";
+import buildClassName from "../utils/classNameHelpers";
 
 export default class Alert extends React.Component {
   static propTypes = {

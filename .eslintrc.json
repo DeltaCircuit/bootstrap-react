@@ -1,4 +1,10 @@
 {
   "extends": ["airbnb", "prettier"],
-  "plugins": ["react", "jsx-a11y", "import"]
+  "plugins": ["react", "jsx-a11y", "import", "prettier"],
+  "globals": {
+    "it": false,
+    "expect": false,
+    "describe": false
+  },
+  "parser": "babel-eslint"
 }
