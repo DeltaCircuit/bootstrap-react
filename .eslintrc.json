@@ -6,5 +6,8 @@
     "expect": false,
     "describe": false
   },
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "rules": {
+    "react/require-default-props": 0
+  }
 }
