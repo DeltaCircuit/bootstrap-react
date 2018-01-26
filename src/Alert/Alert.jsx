@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import getElementType from "../utils/getElementType";
-import buildClassName from "../utils/classNameHelpers";
+import React from 'react';
+import PropTypes from 'prop-types';
+import getElementType from '../utils/getElementType';
+import buildClassName from '../utils/classNameHelpers';
 
 export default class Alert extends React.Component {
   static propTypes = {
@@ -9,15 +9,15 @@ export default class Alert extends React.Component {
     as: PropTypes.string,
     onDismiss: PropTypes.func,
     closeLabel: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     dismissed: false,
-    as: "div",
+    as: 'div',
     onDismiss: () => {},
-    closeLabel: "×",
-    className: ""
+    closeLabel: '×',
+    className: '',
   };
 
   constructor(props) {
@@ -39,15 +39,15 @@ export default class Alert extends React.Component {
       className,
       ...rest
     } = this.props;
-    const formattedChildren = React.Children.map(children, child => {
-      if (child.type === "a") {
-        return React.cloneElement(child, { className: "alert-link" });
+    const formattedChildren = React.Children.map(children, (child) => {
+      if (child.type === 'a') {
+        return React.cloneElement(child, { className: 'alert-link' });
       }
       return child;
     });
     const { dismissed } = this.state;
     const Element = getElementType(Alert, rest);
-    const classNames = buildClassName("alert", rest, className);
+    const classNames = buildClassName('alert', rest, className);
     const dismissButton = (
       <button type="button" className="close" onClick={this.closeAlert}>
         {closeLabel}
@@ -55,13 +55,12 @@ export default class Alert extends React.Component {
     );
     if (dismissed) {
       return null;
-    } else {
-      return (
-        <Element className={classNames} role="alert" {...rest}>
-          {formattedChildren}
-          {dismissable ? dismissButton : null}
-        </Element>
-      );
     }
+    return (
+      <Element className={classNames} role="alert" {...rest}>
+        {formattedChildren}
+        {dismissable ? dismissButton : null}
+      </Element>
+    );
   };
 }

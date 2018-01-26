@@ -1,10 +1,8 @@
 const buildClassName = (element, options, additionalClasses) => {
-  const selectedOptions = Object.keys(options).filter(
-    option => options[option] === true
-  );
+  const selectedOptions = Object.keys(options).filter(option => options[option] === true);
   const classNames = selectedOptions
     .map(option => `${element}-${option}`)
-    .join(" ");
+    .join(' ');
   return `${element} ${classNames} ${additionalClasses}`;
 };
 
